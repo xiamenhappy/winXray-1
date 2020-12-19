@@ -1,0 +1,8 @@
+{
+    "description":"发布 v1.8.2，允许点击「响应速度」列排序服务器列表，其他界面优化。",
+    "format":".lzma",
+    "main":"\\winXray.exe",
+    "updater":"\\winXray.exe",
+    "url":"https://raw.githubusercontent.com/winXray/winXray/master/release/update/",
+    "version":"1.8.02"
+}
