@@ -1,14 +1,14 @@
 import fonts.fontAwesome;
 import win.ui;
 /*DSG{{*/
-var winform = win.form(text="aardio form";right=892;bottom=709;bgcolor=16777215)
+var winform = win.form(text="aardio form";right=892;bottom=564;bgcolor=16777215)
 winform.add(
-btnAdd={cls="plus";text="添加订阅";left=10;top=1;right=143;bottom=28;align="left";dl=1;dt=1;font=LOGFONT(h=-15);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=12}};iconText='\uF196 ';notify=1;textPadding={left=30};z=5};
-btnRemove={cls="plus";text="移除选中订阅";left=143;top=1;right=276;bottom=28;align="left";dl=1;dt=1;font=LOGFONT(h=-15);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=12}};iconText='\uF014';notify=1;textPadding={left=30};z=6};
-btnUpdate={cls="plus";text="更 新";left=578;top=654;right=681;bottom=690;align="left";bgcolor=11580047;db=1;dr=1;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=22}};iconText='\uF0C7';notify=1;textPadding={left=40};z=1};
-chkAll={cls="plus";text="全部启用";left=11;top=628;right=118;bottom=659;align="left";bgcolor=16777215;db=1;dl=1;font=LOGFONT(h=-16);iconStyle={align="left";font=LOGFONT(h=-16;name='FontAwesome')};iconText='\uF0C8';notify=1;textPadding={left=19};z=3};
-chkAutoRefreshSubscription={cls="plus";text="允许出站服务器异常自动刷新订阅";left=11;top=663;right=527;bottom=694;align="left";bgcolor=16777215;db=1;dl=1;dr=1;font=LOGFONT(h=-16);iconStyle={align="left";font=LOGFONT(h=-16;name='FontAwesome')};iconText='\uF0C8';notify=1;textPadding={left=19};z=2};
-listview={cls="listview";left=10;top=34;right=883;bottom=609;db=1;dl=1;dr=1;dt=1;edge=1;fullRow=1;gridLines=1;z=4};
+btnAdd={cls="plus";text="添加订阅";left=10;top=4;right=143;bottom=31;align="left";dl=1;dt=1;font=LOGFONT(h=-15);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=12}};iconText='\uF196 ';notify=1;textPadding={left=30};z=5};
+btnRemove={cls="plus";text="移除选中订阅";left=143;top=4;right=276;bottom=31;align="left";dl=1;dt=1;font=LOGFONT(h=-15);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=12}};iconText='\uF014';notify=1;textPadding={left=30};z=6};
+btnUpdate={cls="plus";text="更新订阅";left=608;top=506;right=730;bottom=542;align="left";bgcolor=11580047;db=1;dr=1;font=LOGFONT(h=-13);iconStyle={align="left";font=LOGFONT(h=-13;name='FontAwesome');padding={left=22}};iconText='\uF0C7';notify=1;textPadding={left=40};z=1};
+chkAll={cls="plus";text="全部启用";left=11;top=489;right=118;bottom=520;align="left";bgcolor=16777215;db=1;dl=1;font=LOGFONT(h=-16);iconStyle={align="left";font=LOGFONT(h=-16;name='FontAwesome')};iconText='\uF0C8';notify=1;textPadding={left=19};z=3};
+chkAutoRefreshSubscription={cls="plus";text="允许出站服务器异常自动刷新订阅";left=11;top=524;right=527;bottom=555;align="left";bgcolor=16777215;db=1;dl=1;dr=1;font=LOGFONT(h=-16);iconStyle={align="left";font=LOGFONT(h=-16;name='FontAwesome')};iconText='\uF0C8';notify=1;textPadding={left=19};z=2};
+listview={cls="listview";left=10;top=36;right=883;bottom=477;db=1;dl=1;dr=1;dt=1;edge=1;fullRow=1;gridLines=1;z=4};
 static={cls="static";text="双击上面单元格可直接编辑";left=710;top=616;right=867;bottom=634;color=10789024;db=1;dr=1;transparent=1;z=7}
 )
 /*}}*/
@@ -28,45 +28,49 @@ winform.listview.gridLines = 0;
 import win.ui.grid;
 var grid = win.ui.grid(winform.listview);//创建数据视图
 grid.readonlyColums = { [1] = true;[2] = true };
- 
+	
 import config;
+import inet.url;
 var reloadSubscriptions = function(){
 	winform.chkAutoRefreshSubscription.checked = config.proxy.autoRefreshSubscription; 
 	config.proxy.subscribeUrls.fields =  {"";"checked";"ps";"url";} 
 	var outbounds = ..config.proxy.outbounds : ..table.array(); 
- 
+	
 	var outbondSubscribeUrlMap = {};
 	for(i=#outbounds;1;-1){
-    	var outbound = outbounds[i] 
-    	if(outbound.subscribeUrl){ 
-        	outbondSubscribeUrlMap[outbound.subscribeUrl] = true;	 
-    	}
+		var outbound = outbounds[i] 
+		if(outbound.subscribeUrl){ 
+			outbondSubscribeUrlMap[outbound.subscribeUrl] = true;	 
+		}
 	} 
 	
 	var cfgSubscribeUrls = config.proxy.subscribeUrls;
 	for(i=#cfgSubscribeUrls;1;-1){
-    	var sub = cfgSubscribeUrls[i]  
-    	if(outbondSubscribeUrlMap[sub.url]){ 
-    		
-        	outbondSubscribeUrlMap[sub.url] = null;	
-    	}
+		var sub = cfgSubscribeUrls[i]  
+		if(outbondSubscribeUrlMap[sub.url]){
+			outbondSubscribeUrlMap[sub.url] = null;	
+		}
+		else{
+			sub.checked = "禁用";
+		}
 	} 
 	
 	var count = 0;
 	for(url,v in outbondSubscribeUrlMap){ 
-    	..table.push(cfgSubscribeUrls,{url=url;ps="";checked="启用"})
+		var tUrl = ..inet.url.split(subscribeUrl); 
+		..table.push(cfgSubscribeUrls,{url=url;ps=tUrl ? tUrl.host : "";checked="启用"})
 	} 
 	
 	var chkAll = true;
 	var checked = {}
 	for(i=#cfgSubscribeUrls;1;-1){
-    	var sub = cfgSubscribeUrls[i] 
-    	if(sub.checked=="启用"){ 
-        	table.push(checked,i)
-    	}
-    	else {
-    		chkAll = false;
-    	}
+		var sub = cfgSubscribeUrls[i] 
+		if(sub.checked=="启用"){ 
+			table.push(checked,i)
+		}
+		else {
+			chkAll = false;
+		}
 	} 
 	winform.chkAll.checked = chkAll;
 	
@@ -79,18 +83,14 @@ winform.loadSubscriptionsOnce = function(){
 	winform.loadSubscriptionsOnce = function(){};
 }
 
-subscribe("uiCommand.subscriptionNew",function(url){
-	var cfgSubscribeUrls = config.proxy.subscribeUrls;
-	for(i=#cfgSubscribeUrls;1;-1){
-    	var sub = cfgSubscribeUrls[i]  
-    	if(sub.url==url){ 
-    		winform.listview.setChecked(i,true);
-    		return;
-    	}
+subscribe("uiCommand.subscriptionNew",function(subItem,existIndex){
+	if(existIndex){ 
+		winform.listview.setItemText(subItem.url,existIndex,4); 	
+		winform.listview.setChecked(existIndex,true);
+		return;
 	} 
 		
-	..table.push(cfgSubscribeUrls,{url=url;ps="";checked="启用"})
-	var item = winform.listview.addItem({"","启用","",url});
+	var item = winform.listview.addItem({"",subItem.checked,subItem.ps,subItem.url});
 	winform.listview.setChecked(item,true);
 } ) 
 
@@ -98,6 +98,21 @@ subscribe("uiCommand.subscriptionNew",function(url){
 grid.onEditChanged = function(text,iItem,iSubItem){
 	var name = config.proxy.subscribeUrls.fields[iSubItem] 
 	var sub = config.proxy.subscribeUrls[iItem];
+
+	if( name==="url" ){ 
+		if( text[1]=='/'#) {
+			text = "https://github.com"+text;
+		}
+		
+		if(sub && sub.ps=="订阅源"){
+			import inet.url;
+			var tUrl = inet.url.split(text);
+			if(tUrl&&#tUrl.host){
+				sub.ps = tUrl.host;
+				winform.listview.setItemText(sub.ps,iItem,3);
+			} 
+		}
+	}
 
 	if(sub){
 		sub[name] = text;
@@ -112,43 +127,52 @@ winform.popmenu = win.ui.popmenu(winform);//创建弹出菜单
 winform.popmenu.add('删除',function(id){
 	winform.btnRemove.oncommand();
 });
+winform.popmenu.add('全部删除',function(id){ 
+    for(i=1; winform.listview.count)  winform.listview.setSelected(i,true);
+	winform.btnRemove.oncommand();
+});
+winform.popmenu.add();
+winform.popmenu.add('自剪贴板添加订阅',function(id){ 
+    winform.btnAdd.oncommand();
+});
 
 winform.btnUpdate.skin(style.primaryButton);
 winform.btnUpdate.oncommand = function(id,event){
 
-    winform.btnUpdate.disabledText = {'\uF254';'\uF251';'\uF252';'\uF253';'\uF250'}
-    config.proxy.autoRefreshSubscription = winform.chkAutoRefreshSubscription.checked; 
-    
-    var outbondSubscribeUrlMap = {};
-    var cfgSubscribeUrls = config.proxy.subscribeUrls;
+	winform.btnUpdate.disabledText = {'\uF254';'\uF251';'\uF252';'\uF253';'\uF250'}
+	config.proxy.autoRefreshSubscription = winform.chkAutoRefreshSubscription.checked; 
+	
+	var outbondSubscribeUrlMap = {};
+	var cfgSubscribeUrls = config.proxy.subscribeUrls;
 	for(i=#cfgSubscribeUrls;1;-1){
-    	var sub = cfgSubscribeUrls[i]  
-    	outbondSubscribeUrlMap[sub.url] = sub.checked=="启用";
+		var sub = cfgSubscribeUrls[i]  
+		outbondSubscribeUrlMap[sub.url] = sub.checked=="启用";
 	} 
 	
 	var removed = 0;
-    var outbounds = ..config.proxy.outbounds : ..table.array();
+	var outbounds = ..config.proxy.outbounds : ..table.array();
 	for(i=#outbounds;1;-1){
-    	var outbound = outbounds[i]  
-    	if(outbound.subscribeUrl){ 
-    		if(!outbondSubscribeUrlMap[outbound.subscribeUrl]){
-    			table.remove(outbounds,i);
-        		removed++;	
-    		}
-    	}
+		var outbound = outbounds[i]  
+		if(outbound.subscribeUrl){ 
+			if(!outbondSubscribeUrlMap[outbound.subscribeUrl]){
+				table.remove(outbounds,i);
+				removed++;	
+			}
+		}
 	} 
+	
 	if(removed) config.proxy.save();
-	 
-	import xray.outbounds;
-	if(!xray.outbounds.updateSubscription(true)){
-		if(removed) publish("uiCommand.restartXrayCore",outbounds) 
+		
+	import v2ray.outbounds;
+	if(!v2ray.outbounds.updateSubscription()){
+		if(removed) publish("uiCommand.restartV2RayCore",outbounds) 
 	}
 	
 	winform.btnUpdate.disabledText = null;
 }
 
 winform.chkAll.oncommand = function(id,event){
-    var checked = winform.chkAll.checked
+	var checked = winform.chkAll.checked
 	for hItem in winform.listview.each(){
 		winform.listview.setChecked(hItem,checked)
 	}
@@ -156,16 +180,16 @@ winform.chkAll.oncommand = function(id,event){
 
 winform.btnRemove.skin(style.plainButton)
 winform.btnRemove.oncommand = function(id,event){
-    
-    var outboundRemoved = 0;
-    var subscribeUrls = config.proxy.subscribeUrls;
+	
+	var outboundRemoved = 0;
+	var subscribeUrls = config.proxy.subscribeUrls;
 	var items = winform.listview.selected;
 	if(!#items){
 		return winform.msgWarn("未选中任何订阅项（ 请用鼠标单击订阅链接，不是指「勾选」 ）")
 	}
 	
 	winform.btnUpdate.disabledText = {'\uF254';'\uF251';'\uF252';'\uF253';'\uF250'}
-    
+	
 	for(i=#items;1;-1){
 		var url = subscribeUrls[items[i]].url;
 		table.remove(subscribeUrls,items[i]);
@@ -173,40 +197,51 @@ winform.btnRemove.oncommand = function(id,event){
 		
 		var outbounds = ..config.proxy.outbounds : ..table.array();
 		for(i=#outbounds;1;-1){
-    		var outbound = outbounds[i]  
-    		if(outbound.subscribeUrl===url){ 
-    			table.remove(outbounds,i);
-    			outboundRemoved++;
-    		}
+			var outbound = outbounds[i]  
+			if(outbound.subscribeUrl===url){ 
+				table.remove(outbounds,i);
+				outboundRemoved++;
+			}
 		} 
 	}
 	
 	config.proxy.save();
 	
 	if(outboundRemoved){
-		publish("uiCommand.restartXrayCore") 
+		publish("uiCommand.restartV2RayCore") 
 	}
 	else {
 		win.delay(200);
 	}
 	
+	publish("outbounds.updateConfigJson"); 
 	winform.btnUpdate.disabledText = null;
 }
 
 winform.btnAdd.oncommand = function(id,event){
-	
-	
 	import inet.url;
 	import win.clip;
+	
+	var ps = "订阅源";
 	var url = win.clip.read();
 	url = url ? string.trim(url,'"\'\s\t\r\n ');
+	if(url && url[1]=='/'#){
+		url = "http://github.com" + url;
+	}
+	
 	if(!inet.url.is(url)){
 		url = "";
 	}
+	else {
+		var tUrl = inet.url.split(url);
+		if(tUrl && tUrl.host){
+			ps = tUrl.host
+		}
+	} 
 	
 	config.proxy.subscribeUrls[winform.listview.count+1] = {checked="启用";ps="订阅源";url=url}
 	var item = winform.listview.addItem({
-		"";"启用";"订阅源";url
+		"";"启用";ps;url
 	})
 	
 	winform.listview.setChecked(item,true);
@@ -214,39 +249,39 @@ winform.btnAdd.oncommand = function(id,event){
 }
 
 winform.listview.onnotify = function(id,code,ptr){  
- 	 if( code == 0xFFFFFF9B/*_LVN_ITEMCHANGED*/ ){ 
- 	 	var nmListView = winform.listview.getNotifyMessage(code,ptr);
- 	 	if( !nmListView )
- 	 		return;
- 	 		
- 	 	if( nmListView.uNewState & 0xF000/*_LVIS_STATEIMAGEMASK*/){
- 	 		var selIndex = nmListView.iItem;
- 	 		if( winform.listview.getChecked( selIndex ) ){
- 	 			config.proxy.subscribeUrls[selIndex].checked = "启用";
- 	 			config.proxy.save();
- 	 			
- 	 			winform.listview.setItemText("启用",selIndex,2);
- 	 		}
- 	 		else {
- 	 			config.proxy.subscribeUrls[selIndex].checked = "禁用";
- 	 			config.proxy.save();
- 	 			
- 	 			winform.listview.setItemText("禁用",selIndex,2); 
- 	 		} 
- 	 		
- 	 		var chkAll = true; 
-			for(i=#config.proxy.subscribeUrls;1;-1){
-    			var sub = config.proxy.subscribeUrls[i] 
-    			if(sub.checked!="启用"){ 
-    				chkAll = false;
-    				
-    			}
+	if( code == 0xFFFFFF9B/*_LVN_ITEMCHANGED*/ ){ 
+		var nmListView = winform.listview.getNotifyMessage(code,ptr);
+		if( !nmListView )
+			return;
+			
+		if( nmListView.uNewState & 0xF000/*_LVIS_STATEIMAGEMASK*/){
+			var selIndex = nmListView.iItem;
+			if( winform.listview.getChecked( selIndex ) ){
+				config.proxy.subscribeUrls[selIndex].checked = "启用";
+				config.proxy.save();
+				
+				winform.listview.setItemText("启用",selIndex,2);
+			}
+			else {
+				config.proxy.subscribeUrls[selIndex].checked = "禁用";
+				config.proxy.save();
+				
+				winform.listview.setItemText("禁用",selIndex,2); 
 			} 
-			 
+			
+			var chkAll = true; 
+			for(i=#config.proxy.subscribeUrls;1;-1){
+				var sub = config.proxy.subscribeUrls[i] 
+				if(sub.checked!="启用"){ 
+					chkAll = false;
+					
+				}
+			} 
+				
 			winform.chkAll.checked = chkAll;
- 	 	}  
- 	 }
- 	 elseif( code ==  0xFFFFFFF4/*_NM_CUSTOMDRAW*/ ) {
+		}  
+	}
+	elseif( code ==  0xFFFFFFF4/*_NM_CUSTOMDRAW*/ ) {
 		var lvcd = winform.listview.getNotifyCustomDraw(code,ptr);
 		if( lvcd.nmcd.dwDrawStage == 0x10001/*_CDDS_ITEMPREPAINT*/)
 			return 0x20/*_CDRF_NOTIFYSUBITEMDRAW*/
@@ -263,9 +298,9 @@ winform.listview.onnotify = function(id,code,ptr){
 		}
 	}
 	elseif( code ==  0xFFFFFFFB/*_NM_RCLICK*/ )  {
-    	var x,y = win.getCursorPos();
-    	winform.popmenu.popup(x,y,true);//弹出菜单
-    }
+		var x,y = win.getCursorPos();
+		winform.popmenu.popup(x,y,true);//弹出菜单
+	}
 }
 
 winform.show();

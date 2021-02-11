@@ -1,42 +1,139 @@
-<details>  <summary>展开折叠并复制下面 vless/xtls 黑科技公益服务器分享链接，在winXray里点「批量导入链接」即可</summary>  <pre>vless://0d841558-eade-cfa9-f3ea-b6ab735a7867@us.winray.xyz:443/?flow=xtls-rprx-direct&host=us.winray.xyz&sni=us.winray.xyz&tls=xtls#%E7%BE%8E%E5%9B%BD%E8%A5%BF%E9%9B%85%E5%9B%BExtls%E9%BB%91%E7%A7%91%E6%8A%80
-vless://1fd55a0e-67e1-a70e-acdc-86605b0b7f00@jp.winray.xyz:443/?flow=xtls-rprx-direct&host=jp.winray.xyz&sni=jp.winray.xyz&tls=xtls#%E6%97%A5%E6%9C%AC%E4%B8%9C%E4%BA%ACxtls%E9%BB%91%E7%A7%91%E6%8A%80
-vmess://eyJhZGQiOiJ3d3cuYWVjaC5jYyIsImFpZCI6NjQsImhvc3QiOiIiLCJpZCI6ImVmM2M2YWEwLWU1ZjItNDMzMi1iYWQ4LTE3YzA0MzhkZmFhMyIsIm5ldCI6IndzIiwicGF0aCI6Ii9yYXkiLCJwb3J0Ijo0NDMsInBzIjoiXHU5OTk5XHU2RTJGNCIsInRscyI6InRscyIsInR5cGUiOiJub25lIiwidiI6Mn0=
-vmess://eyJhZGQiOiIyMy4yMjUuMTI1Ljg2IiwiYWlkIjo2NCwiaG9zdCI6Ind3dy41NjYyNjE3My54eXoiLCJpZCI6IjhmYjkyMWMwLTU2NGQtNGQ1YS05YjEzLTM4NGMwMTgyMDEyNiIsIm5ldCI6IndzIiwicGF0aCI6Ii9mb290ZXJzIiwicG9ydCI6NDQzLCJwcyI6Ilx1N0Y4RVx1NTZGRDQiLCJ0bHMiOiJ0bHMiLCJ0eXBlIjoibm9uZSIsInYiOjJ9
-vmess://eyJhZGQiOiIxMDQuMTYuMTYwLjIwIiwiYWlkIjoyLCJob3N0IjoiZnJlZXVzLm1jYW4udGVjaCIsImlkIjoiOWU2Y2VlZmYtMjU0Ni0zNjkwLWFjMDAtNmZjZGYzMWRlYzk0IiwibmV0Ijoid3MiLCJwYXRoIjoiL3kyODQiLCJwb3J0Ijo0NDMsInBzIjoiXHU3RjhFXHU1NkZENCIsInRscyI6InRscyIsInR5cGUiOiJub25lIiwidiI6Mn0=
-vmess://eyJhZGQiOiJsbGFqdi5yZWJsZHAudGVjaCIsImFpZCI6NjQsImhvc3QiOiJsbGFqdi5yZWJsZHAudGVjaCIsImlkIjoiM2I1ZTI1OGUtOGM1ZS00NWQzLWI3ZDItMDJjOGY1ZmMwYmIyIiwibmV0Ijoid3MiLCJwYXRoIjoiLyIsInBvcnQiOjQ0MywicHMiOiJcdTVGQjdcdTU2RkQ0IiwidGxzIjoidGxzIiwidHlwZSI6Im5vbmUiLCJ2IjoyfQ==
-vmess://eyJhZGQiOiIxNTQuODQuMS4xNDAiLCJhaWQiOjY0LCJob3N0IjoiMTU0Ljg0LjEuMTQwIiwiaWQiOiIyYTczNDlkNi05OTRhLTQzNGItOTU4OS1jMDAyMDY4NWU1MjgiLCJuZXQiOiJ0Y3AiLCJwYXRoIjoiLyIsInBvcnQiOjU0NjcxLCJwcyI6Ilx1ODM3N1x1NTE3MDQiLCJ0bHMiOiIiLCJ0eXBlIjoibm9uZSIsInYiOjJ9
-vmess://eyJhZGQiOiJjb25zdW0yLmN1a2VlLmNjIiwiYWlkIjo2NCwiaG9zdCI6ImNvbnN1bTIuY3VrZWUuY2MiLCJpZCI6IjAyOTE0RjI1LTQxQzgtMzExNC01MEYzLTE5MzU5QjYzMUM3NyIsIm5ldCI6IndzIiwicGF0aCI6Ii8iLCJwb3J0Ijo0NDMsInBzIjoiXHU2Q0Q1XHU1NkZENCIsInRscyI6InRscyIsInR5cGUiOiJub25lIiwidiI6Mn0=</pre></details>  
-
 [winXray 入门小技巧](./sub/introduce.md)   
-[winXray 最新视频教程](https://www.youtube.com/results?search_query=winXray&sp=CAI%253D)  
+[winXray 相关视频列表](https://www.youtube.com/results?search_query=winXray)  
 [网络免费 vmess 服务器订阅链接](https://proxypool.ga/vmess/sub)   
 [网络免费 Shadowsocks 服务器订阅链接](https://proxypool.ga/ss/sub)     
+[网络免费 clash 服务器订阅链接](https://proxypoolss.tk/clash/proxies?speed=100&type=vmess,trojan)   
+可复制上面各种格式订阅链接，在 winXray 中点击「批量导入链接」体验 winXray 有强大的兼容性。  
+免费的服务器仅供测试（一定要走 PAC，不要开全局代理不要登录账号更不要长时间使用 ）。
 
 # winXray 
-本软件源码已贡献到公共领域并放弃版权，源码可使用 [aardio（开发环境仅6.5MB）](http://www.aardio.com) 编译生成单文件绿色EXE( 不需要.Net等任何外部运行库 ），**[点这里下载](./../../raw/master/release/winXray.7z)** （ [64位版本](./../../raw/master/release/winXray.7z) / [32位版本](./../../raw/master/release/winXray32.7z) ），解压即可直接使用( 仅  **[5.0MB](./../../raw/master/release/winXray.7z)** - 已自带 Xray-core）。
+winXray[:loud_sound:](http://dict.youdao.com/dictvoice?audio=winxray&type=2) 是最简洁轻快的 V2Ray、XRay、Trojan、Trojan、Trojan、Trojan-go、Shadowsocks、SSR(ShadowsocksR)、SSRoT、NaïveProxy，SOCKS，HTTP,HTTPS 全能通用客户端（Windows系统），支持并发检测大量服务器并迅速找到当前最快的服务器，服务器连接异常时可自动寻找其他速度最快的服务器 - 切换速度快如闪电，自订阅源获取的服务器异常时可自动刷新订阅，并且自带一键自动部署服务端工具。
 
-winXray[:loud_sound:](http://dict.youdao.com/dictvoice?audio=winxray&type=2) 是一个简洁稳定的 [Xray/V2Ray(vmess/vless/xtls)、Shadowsocks、Trojan](https://github.com/XTLS/Xray-core) 通用客户端（Windows系统），可自动检测并连接访问速度最快的代理服务器。服务器连接异常时可以自动更换代理服务器 - 再也不用担心服务器抽风了。winXray 也提供一键安装 XRay(V2Ray、Shadowsocks、Trojan) 服务器工具。   
+**本软件源码已放弃版权贡献到公共域** ，源码可使用 [aardio](http://www.aardio.com) 编译生成单文件绿色EXE，**[点这里下载](./../../raw/master/release/winXray.7z)** （ [64位版本](./../../raw/master/release/winXray.7z) / [32位版本](./../../raw/master/release/winXray32.7z) ），解压即可直接使用( 体积很小仅  **[6.1 MB](./../../raw/master/release/winXray.7z)** - 已自带 V2Ray Core ）。  
+
+# 使用前必读    
+最终都要删库跑路的原因大家都懂不用我多说了吧？！ 我删库特别快，是因为我写代码的速度快，我用了几小时就完成了 winXray 的主要代码，用了几天升级就迅速达到了一般其他软件写了几年的成熟度！因为我即将删库，但是我推上去的更新 - fork 的项目基本都没有那么迅速的主动拉更新，大家可以看一下 winXray 上线才短短几天就超过了 600 forks, 所以如果我推送更新之前不删库，那么我删库以后就没有人能找到最新版本的源代码。   
   
-之前我用过很多代理客户端，经常用一会就挂掉了，有些测试很久才找到下一个可用的服务器，有时怎么切换都不行，一定要把整个软件退出重启才能恢复。而且在WIN10上都有相同的BUG:PAC代理用一段时间就会卡死( winXray已经通过自行实现PAC服务器解决了这个问题 )，其实这些软件里提供的很多功能我并不需要，我只想愉快地用下 google 找点技术资料提升工作效率。但是在网上找了很久都没找到适合的软件，于是决定自己动手写一个，还好用 aardio 写软件的速度很快 - 大概用了几个小时就完成了 winXray 的主要代码，改进了几个版本以后就很稳定了，**我自己用了 winXray  几个月再也没有遇到 google 抽风访问不了的问题**。    
+现在大多杀毒软件都是白名单查杀，所以新生的EXE都会乱报病毒，因为我更新的速度太快，所以不断的推新EXE上来，所以你可能遇到误报，但是你完全可以使用源代码自己编译出一模一样的EXE，还有人吹牛说其他翻墙软件不误报 - 你去 issues 里以及网上搜一下有多少误报好不好？！遇到误报可以提交给你的杀毒厂商核实，也可以自己编译源码生成EXE后使用，解决和核实问题很容易 - 其他套路都是多余的。
+  
+本来 winXray 源码已放弃版权贡献到公共域，但是有人（TheMRLL ）把源码拿去拖了个又大又丑的推广按钮上去，什么功能也不加就发布新版自称官方，而且还把源码搞得很乱出了问题的对本作者进行诋毁（ 错误信息都看不懂居然自称开源软件官方 ），对提及原版 winXray 的帖子进行封删和威胁，我真是惊到了世上居然有如此无耻之人，本来就是给你自由发挥的，吃相这么难看良心不会痛吗？！本来我想改一个许可证限制一下这种不好的行为，但是最后我还是决定继续放弃版权，继续将源码贡献到公共域，即然开放源码，就一定要开放得彻底，我们不能因为世上有个别的恶棍而放弃自己善良的初心。 
 
-一些网友对 winXray 的测速功能存在误解，简单的测速不但不必要的消耗流量而且没有什么实用价值，例如Ping通了TCP访问不了，TCP通了但浏览器被阻断，或者下载测速需要连接代理服务器以后长时间测试才能得到下载速度 - 如果有很多服务器需要频繁快速地测速这样显然是不行的。**根据我长时间的实测，我使用一堆的服务器，大多时候 winXray 都能最快的找到其中速度最快、且能正常使用的线路**。要考虑到网络速度与服务器响应速度本来就是波动的，**winXray 能在连接代理服务器以前在零点几秒以内快速地在上百个代理服务器中找出最快的服务器** - 可以节省我们大量手动测试切换的时间，如果你有一个比我们幸福的网络环境，有一堆稳定流畅看4K视频的代理服务器 - 那你确实可以关闭自动切换功能 - 手动切换即可。
+最近又发现 TheMRLL 有一些很奇怪的行为。每次我发布新版，他就在后面复制粘贴然后改版本号发布，<span style="color:red">更奇怪的是他的 commits 基本都是伪造的，我用文件比较工具查了一下，他的多个所谓的改进都只是添加了空函数</span>（ 而且还是在开发工具里双击控件生成的范例代码 ）。另外他不知道为什么复制粘贴时很多代码放错了位置，所以他提供的程序很多奇怪的 BUG - 这些我提供的原版是没有的。 虽然我并不反对大家自由使用 winXray 的源码，但这个 TheMRLL 实在是太不像话，他提供的 EXE 请大家注意安全谨慎下载。
 
-![winXray](./screenshots/winXray.png)
+# PAC 代理模式 / 全局代理 + 路由模式 对比
 
-winXray支持批量导入 vless、vmess、ss、trojan、trojan-go …… 等格式的分享链接，  
-也可以导入通用订阅链接，以及 base 64、json …… 等不同格式的服务器配置。winXray 有强大的兼容性，我们甚至可以直接自 github 项目地址导入代理服务器，例如直接复制链接 https://github.com/winXray/winXray/blob/master/sub/sample.json 即可一键导入 winXray。
+winXray 的 PAC 代理稳定、流畅、易用。  在 PAC 模式下，winXray 会优先启用高效安全的 SOCKS5 协议，并且可以自动兼容在 PAC 模式下仅支持 HTTP代理的应用。winXray 也可以在 PAC 模式下完美支持 Telegram IP 地址库 。
 
-![服务器配置](./screenshots/config.json.png)
-**小技巧: JSON里点击任意字段都会显示该字段的用法说明。** 个人认为做很多对话框来配置服务器的参数是非常蠢的，winXray已经把各种代理协议的配置简化为几个统一命名的JSON字段（ **也可以作为一种标准的、统一的、通用的订阅响应格式使用** ），只要稍加学习就可以非常熟练的添加、修改各种代理协议的配置。而且对于大多数用户根本不需要改配置 - 简单的复制导入分享链接就可以，我们不必要把简单的事搞复杂。
+SOCKS5 支持对比：
+- [ ] 全局路由模式: 不支持 SOCKS5
+- [x] PAC模式: 支持 高效安全的SOCKS5   
+  
+UWP 应用支持对比：
+- [ ] 全局路由模式: UWP 应用全部无法联网。
+- [x] PAC模式: UWP 应用可以正常联网，使用 winXray 自带工具也可以为UWP应用开启本地代理。 
 
-可选在 ["/xray-core/winXray-default-servers.json"](./xray-core/winXray-default-servers.json) 文件中添加默认服务器配置（生成EXE后默认配置自动嵌入到EXE文件，可选删除该文件,也可以继续使用该文件覆盖EXE自带的默认服务器列表）。
+DNS 解析对比：
+- [ ] 全局路由模式: 使用本机发起 DNS 解析，即使设为国外 DNS 服务器，仍然会返回适用于国内线路地址。
+- [x] PAC模式: 使用服务器上的 DNS 解析，安全可靠。
 
-![PAC配置](./screenshots/pac.png)
-**小技巧: PAC编辑器里点击任意域名都会自动关联到单选框，可以直接切换代理或直连。**
+根据客户端自动切换代理协议：
+- [ ] 全局路由模式: 不支持
+- [x] PAC模式: winXray 里的 PAC 代理可以让目标应用（例如浏览器）优先选择高效安全的 SOCKS5 代理协议，对于不支持 SOCKS 代理的应用（例如谷歌地球），winXray 在 PAC 模式下会自动为这些应用提供 HTTP 代理。
 
-软件首次运行时会在当前目录查找 "./xray-core/xray.exe"   
-发行文件仅需要 "./winXray.exe"，可选带上 "./xray-core/" 目录（ 如果没有找到会自动到v2ray官网下载，不过没有代理服务器下载有时候非常慢 )。
+IP 段代理规则：
+- [x] 全局路由模式: 比较好的支持 IP 段代理规则
+- [x] PAC模式: winXray 里 PAC 可以支持IP 段代理规则（ 完美支持 Telegram ）。
 
-![端口配置](./screenshots/config.advanced.png)
+独立性
+- [ ] 全局路由模式: 不独立，代理规则集成在翻墙软件内核中
+- [x] PAC模式: 完全独立，PAC 代理服务完全独立于翻墙软件，只有 PAC 指定的域名或IP才会与翻墙软件发生交互。
 
-<img src="./screenshots/telegram.gif" width="1031" alt="Telegram 端口配置">
+兼容性
+- [ ] 全局路由模式: 不是由系统实现的规则，一旦设置全局代理，不管适不适合走代理的软件都被强制使用代理，所以兼容性不太好，会导致上述的 UWP 无法联网等问题。
+- [x] PAC模式: 由系统提供的PAC有良好的兼容性，因为历史悠久，一般的软件都会对PAC有良好的兼容，PAC 主要为适合走代理的浏览器等软件而设计，所以其他软件可以较好的识别并判断是不是要使用 PAC 指定的代理还是直连。
+
+简易度
+- [ ] 全局路由模式: 配置复杂，有一定门槛。
+- [x] PAC模式: 配置非常简单。
+
+
+一般不建议普通用户去编辑路由规则 - 错误的配置可能会导致敏感的流量误走代理服务器。
+专业的事请交给专业的人去做，使用 winXray 可以一键启用、更新 [v2ray-rules-dat](https://github.com/Loyalsoldier/v2ray-rules-dat) 提供的最新路由规则。
+
+注意在 winXray 里无论使用 NaïveProxy 还是 SSR，SSRoT 都支持 V2Ray 路由规则。
+
+# 设置系统代理失败怎么办
+如果设置代理以后不能正常生效：请首先右键点击 winXray 任务栏的托盘图标，在弹出的右键菜单中点击【查看 Internet 代理设置】，并检查代理设置是否正常。如果 winXray 不能修改代理设置，但是可以手动修改成功，这一般是被安全软件错误地拦截了( 而且安全软件没有正常弹出确认对话框，或者误点了阻止设置 ）。这时候请到安全软件的相关设置中将 winXray 添加到信任列表即可。
+
+如果不是上面的原因，请按下【Win + R】组合键打开系统运行对话框，输入 regedit 点击确定打开注册表路径 
+<span style="color:green">HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Connections</span>
+然后将“Connections”项删除，注销一下系统即可正常使用代理了。
+
+如果上面的方法仍然不行，请在注册表中打开打开路径
+<span style="color:green">Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinHttpAutoProxySvc</span>
+将 start 的值改为 2， 也就是将 WinHttpAutoProxySvc 服务改为自动启动，然后重启计算机即可。
+
+# Core 默认路径：
+
+可在「 winXray/ 配置 / Core配置 」 下载更新 V2Ray Core / Xray Core / SSR Core ，  
+下载更新 V2Ray Core（或 Xray Core）完成后会自动切换 V2Ray 内核。
+
+默认会在以下目录查找 V2Ray Core（或 Xray Core）：
+
+    ./v2ray-core/
+    %localappdata%\winXray\core
+
+默认会在以下目录查找 SSR Core：
+
+    ./v2ray-core/ssr-core
+    %localappdata%\winXray\ssr-core
+
+默认会在以下目录查找 NaïveProxy Core：
+
+    ./v2ray-core/naive-core
+    %localappdata%\winXray\naive-core
+
+找不到会自动下载，没有代理访问 Github 会很慢很慢，有时可能根本打不开，建议经常运行一下 winXray 工具里自带的 【Github 网速优化工具】
+
+注意不同的代理协议连接时会调用不同的 Core，   
+例如 NaïveProxy 连接时会启动 naive.exe，这时候系统防火墙会有提示，  
+如果这时候没看清就点了拒绝，那么就无法正常使用相应的 Core 了，  
+所以请看清楚再点，点错了到系统防火墙里再打开一下就可以了。  
+
+# 安装 NaïveProxy 服务端 
+
+参考：https://github.com/klzgrad/naiveproxy  以 CentOS 为例：
+
+```sh
+yum intall golang
+yum install git
+go get -u github.com/caddyserver/xcaddy/cmd/xcaddy
+~/go/bin/xcaddy build --with github.com/caddyserver/forwardproxy@caddy2=github.com/klzgrad/forwardproxy@naive
+sudo setcap cap_net_bind_service=+ep ./caddy
+wget -O naive.tar.xz  https://github.com/klzgrad/naiveproxy/releases/download/v88.0.4324.96-1/naiveproxy-v88.0.4324.96-1-linux-x64.tar.xz 
+tar -xf ./naive.tar.xz
+
+mv naiveproxy-v88.0.4324.96-1-linux-x64 naive
+echo -e "{\n  \"listen\": \"socks://127.0.0.1:1080\",\n  \"proxy\": \"https://user:pass@example.com\"\n}" > ./naive/config.json
+
+cat << EOF > ./Caddyfile
+:443, example.com
+tls me@example.com
+route {
+  forward_proxy {
+    basic_auth user pass
+    hide_ip
+    hide_via
+    probe_resistance
+  }
+  file_server { root /var/www/html }
+}
+EOF
+
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT;iptables -A INPUT -p tcp --dport 443 -j ACCEPT;firewall-cmd --permanent --add-port=80/tcp;firewall-cmd --permanent --add-port=443/tcp;firewall-cmd --reload;
+
+./naive/naive --config ./naive/config.json &
+./caddy run # 后台运行改成 ./caddy start
+```
+
+安装以前需要提前准备一个域名，并将上面脚本中的 example.com 替换为你的域名，user:pass 改为代理登录用户名与密码。

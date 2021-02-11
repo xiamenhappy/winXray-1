@@ -1,8 +1,8 @@
 {
-    "description":"发布 v1.8.2，允许点击「响应速度」列排序服务器列表，其他界面优化。",
+    "description":"发布 v3.7，增加托盘图标显示代理状态，增加 UWP 代理设置",
     "format":".lzma",
     "main":"\\winXray.exe",
     "updater":"\\winXray.exe",
-    "url":"https://raw.githubusercontent.com/winXray/winXray/master/release/update32/",
-    "version":"1.8.02"
+    "url":"https://raw.githubusercontent.com/winXray/winXray/master/release/update/",
+    "version":"3.7"
 }
