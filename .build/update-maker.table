@@ -1,5 +1,6 @@
 {
 updateUrl="https://raw.githubusercontent.com/winXray/winXray/master/release/update/";
-description="发布 v1.8.2，允许点击「响应速度」列排序服务器列表，其他界面优化。";
+singleFile=1;
+description="发布 v3.7，增加托盘图标显示代理状态，增加 UWP 代理设置";
 outputDir="/release/update/"
 }

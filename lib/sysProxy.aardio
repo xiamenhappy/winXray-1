@@ -1,72 +1,76 @@
 //sysProxy 系统代理
 import config;
 import inet.conn;
-import xray.github;
-import xray.pacServer;
+import v2ray.github;
+import v2ray.pacServer;
 
 namespace sysProxy;
 
 switch = function(mode){  
-    ..config.proxy.mode = mode : "direct";
-    ..config.proxy.save();
-    
-    if(mode=="pac"){
-        var pacUrl = ..xray.pacServer.getUrl();
+	..config.proxy.mode = mode : "direct";
+	..config.proxy.save();
+  
+	if(mode=="pac"){
+		var pacUrl = ..v2ray.pacServer.getUrl();
 		if(pacUrl){
-			..inet.conn.setProxyAutoConfig(,pacUrl );
+			..inet.conn.setProxyAutoConfig(,pacUrl ); 
 		}
-    	else {
-    		..xray.pacServer.restart();
-    	}
-    	..xray.github.setProxy(true);
-    }
-    elseif(mode=="proxy"){ 
-        import xray.core;
-        var httpProxPort = ..xray.core.httpProxPort;
-        var socksProxyPort = ..xray.core.socksProxyPort;
-        
-        if(socksProxyPort){
-            if(..config.proxy.useHttpGlobal){
-            	..inet.conn.setProxy(,"127.0.0.1:" + httpProxPort) 
-            }
-            else {
-            	..inet.conn.setProxy(,"SOCKS=127.0.0.1:"+socksProxyPort); 
-            }
-        	
-    		..xray.github.setProxy(true); 	
-        } 
-    }
-    else {
+		else {
+			..v2ray.pacServer.restart();
+		}
+		..v2ray.github.setProxy(true);
+	}
+	elseif(mode=="proxy"){ 
+		import v2ray.core;
+		var address = v2ray.core.getSystemProxyConfig(); 
+		
+		if(address){
+			..inet.conn.setProxy(,address);  
+			..v2ray.github.setProxy(true); 	
+		} 
+	}
+	else {
 		..inet.conn.setProxy();
-		..xray.github.setProxy(false);	
-    }
-     
-    ..publish("sysProxy.modeChanged",mode)
+		..v2ray.github.setProxy(false);	
+	} 
+	..publish("sysProxy.modeChanged",mode)
 } 
 
 switchToGlobalMode = function(){
-    switch("proxy") 
+	switch("proxy") 
 }
 
 switchToPacMode = function(){  
-    switch("pac") 
+	switch("pac") 
 }
 
 switchToDirectMode  = function(){ 
-    switch("direct") 
+	switch("direct") 
+}
+
+switchHotkey  = function(){ 
+    var mode = ..config.proxy.mode;
+	if( mode != "pac"){
+		switch("pac") 
+	}
+	else {
+		switch("proxy") 
+	}
+	
+	return ..config.proxy.mode;
 }
 
 reset = function(proxy){
-    if(proxy===false){
-        if(..config.proxy.mode != "direct"){
-            ..inet.conn.setProxy();
-            ..xray.github.setProxy(false);
-        }
-        return;
-    }
-    
-     ..inet.conn.setProxy();
-    switch(..config.proxy.mode); 
+	if(proxy===false){
+		if(..config.proxy.mode != "direct"){
+			..inet.conn.setProxy();
+			..v2ray.github.setProxy(false);
+		}
+		return;
+	}
+	
+	..inet.conn.setProxy();
+	switch(..config.proxy.mode); 
 } 
 
 ..subscribe("pacServer.restarted",function(pacPort){
@@ -75,7 +79,7 @@ reset = function(proxy){
 	}
 } )
 
-..subscribe("xrayCore.restarted",function(socksProxyPort,httpProxPort){ 
+..subscribe("v2RayCore.restarted",function(socksProxyPort,httpProxPort){ 
 	if(..config.proxy.mode != "direct"){
 		reset(true);
 	}
@@ -88,4 +92,4 @@ switchToPacMode() = 设为PAC自动代理，同步修改配置文件。
 switchToDirectMode() = 设为禁用代理，同步修改配置文件。
 reset(.(是否启用代理)) = 重置系统代理设置，不修改配置文件。\n省略参数时默认值为true。
 end intellisense**/
- 
+	
